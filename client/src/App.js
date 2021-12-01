@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import PrivateRoute from "./components/PrivateRoute";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
+import NewPage from "./pages/NewPage";
 import ProtectedPageExample from "./pages/ProtectedPageExample";
 import SignUp from "./pages/SignUp";
 import { client } from "./util/apolloClient";
@@ -30,6 +31,11 @@ function App() {
             <PrivateRoute path="/protected">
               <ProtectedPageExample />
             </PrivateRoute>
+            {/* For development purposes, I have the route below as Route and not PrivateRoute, 
+            but it will need to be changed once our back end connects */}
+            <Route path="/newpage">
+              <NewPage />
+            </Route>
           </Switch>
         </AuthProvider>
       </Router>
