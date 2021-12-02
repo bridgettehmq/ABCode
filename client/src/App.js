@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import PrivateRoute from "./components/PrivateRoute";
 import Home from "./pages/Home";
+import Info from "./pages/Info";
 import Login from "./pages/Login";
 import NewPage from "./pages/NewPage";
 import ProtectedPageExample from "./pages/ProtectedPageExample";
@@ -19,6 +20,9 @@ function App() {
           <Switch>
             <Route exact path="/">
               <Home />
+            </Route>
+            <Route exact path="/info">
+              <Info />
             </Route>
             <Route path="/login">
               <Login />
