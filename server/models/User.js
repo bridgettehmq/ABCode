@@ -23,6 +23,36 @@ const userSchema = new Schema({
     type: Date,
     default: Date.now,
   },
+
+  page: [
+    {
+      title: {
+        type: String,
+        required: "You need to include a title!",
+        minlength: 1,
+        maxlength: 280,
+        trim: true,
+      },
+      h1: {
+        type: String,
+        required: "You need to include an H1",
+        minlength: 1,
+        maxlength: 280,
+        trim: true,
+      },
+      paragraph1: {
+        type: String,
+        required: true,
+        minlength: 100,
+        maxlength: 500,
+      },
+      paragraph2: {
+        type: String,
+        minlength: 100,
+        maxlength: 500,
+      },
+    },
+  ],
 });
 
 userSchema.pre("save", async function (next) {

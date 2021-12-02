@@ -4,6 +4,22 @@ const typeDefs = gql`
   "Unix time stamp in milliseconds."
   scalar Date
 
+  type User {
+    _id: ID!
+    username: String!
+    email: String!
+    pages: [Page]
+  }
+
+  type Page {
+    _id: ID!
+    title: String!
+    h1: String! 
+    paragraph1: String! 
+    paragraph2: String
+    image: String
+  }
+  
   type Query {
     "Find the logged in user."
     me: User
@@ -12,6 +28,9 @@ const typeDefs = gql`
   type Mutation {
     createUser(email: String!, password: String!, username: String!): Auth
     login(email: String!, password: String!): Auth
+    #updatePage(pageId: pageId!): User
+    savePage(pageId: ID!): User
+    removePage(pageId: pageId!): User
   }
 
   type Auth {
@@ -19,12 +38,6 @@ const typeDefs = gql`
     user: User!
   }
 
-  type User {
-    _id: ID!
-    username: String!
-    email: String!
-    lastLogin: Date!
-  }
 `;
 
 module.exports = typeDefs;
