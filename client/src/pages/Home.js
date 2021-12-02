@@ -19,7 +19,7 @@ export default function Home() {
       </p>
       
       <Stack gap={2} className="col-md-5 mx-auto">
-  <Button href="#" variant="light">Gets Started</Button>
+  <Button href="./info" variant="light">Gets Started</Button>
   <Button href="./signup" variant="light">Sign Up</Button>
   <Button href="./login" variant="light">Login</Button>
 </Stack>
