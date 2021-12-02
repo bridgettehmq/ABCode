@@ -1,30 +1,30 @@
 body {
-background: #F9A11B;
-font-family:monospace;
+  background: #f9a11b;
+  font-family: monospace;
 }
 .container {
-    position: relative;
-    max-width: 900px; /* Maximum width */
-    margin: 0 auto; /* Center it */
-  }
+  position: relative;
+  max-width: 900px; /* Maximum width */
+  margin: 0 auto; /* Center it */
+}
 img {
-    height: 350px;
-    display: block;
+  height: 350px;
+  display: block;
   margin-left: auto;
   margin-right: auto;
 }
-h1{
-    color:rebeccapurple;
-    text-align: center;
-    font-weight: bolder;
-    font-size: 50px;
+h1 {
+  color: rebeccapurple;
+  text-align: center;
+  font-weight: bolder;
+  font-size: 50px;
 }
-p{
-    color: black;
-    text-align: center;
-    font-weight: bold;
+p {
+  color: black;
+  text-align: center;
+  font-weight: bold;
 }
-.btn{
-    background:rebeccapurple;
-    color: ghostwhite;
+.btn {
+  background: rebeccapurple;
+  color: ghostwhite;
 }
