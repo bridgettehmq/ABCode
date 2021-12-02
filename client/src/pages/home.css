@@ -24,3 +24,7 @@ p{
     text-align: center;
     font-weight: bold;
 }
+.btn{
+    background:rebeccapurple;
+    color: ghostwhite;
+}
