@@ -40,6 +40,9 @@ function App() {
             <Route path="/newpage">
               <NewPage />
             </Route>
+            <Route path="/info">
+              <Info />
+            </Route>
           </Switch>
         </AuthProvider>
       </Router>
