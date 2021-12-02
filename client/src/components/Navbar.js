@@ -9,6 +9,9 @@ export default function Navbar() {
       <NavLink exact to="/" className="navbar-link">
         Home
       </NavLink>
+      <NavLink exact to="/info" className="navbar-link">
+        Info
+      </NavLink>
       {isLoggedIn ? (
         <>
           <NavLink to="/protected" className="navbar-link">
