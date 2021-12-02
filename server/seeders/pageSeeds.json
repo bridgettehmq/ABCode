@@ -1,0 +1,22 @@
+[
+    {
+        "title": "ABCode by CODE ACADEMY: Lesson 1",
+        "h1": "The basics of HTML",
+        "paragraph1": "ABCode makes learning about code fun! I'm excited to learn more about HTML and other languages."
+    },
+    {
+        "title": "ABCode by CODE ACADEMY: Lesson 2",
+        "h1": "The basics of CSS",
+        "paragraph1": "ABCode makes learning about code fun! I'm excited to learn more about HTML and other languages."
+    },
+    {
+        "title": "ABCode by CODE ACADEMY: Lesson 3",
+        "h1": "The basics of REACT",
+        "paragraph1": "ABCode makes learning about code fun! I'm excited to learn more about HTML and other languages."
+    },
+    {
+        "title": "ABCode by CODE ACADEMY: Lesson 4",
+        "h1": "The basics of Javascript",
+        "paragraph1": "ABCode makes learning about code fun! I'm excited to learn more about HTML and other languages."
+    }
+]
