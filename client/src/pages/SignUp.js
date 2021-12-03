@@ -72,13 +72,13 @@ export default function SignUp() {
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label htmlFor="email">Enter email</Form.Label>
           <Form.Control
-           disabled={loading}
-           id="email"
-           type="email"
-           name="email"
-           placeholder="Enter email"
-           value={formState.email.value}
-           onChange={handleInputChange}
+            disabled={loading}
+            id="email"
+            type="email"
+            name="email"
+            placeholder="Enter email"
+            value={formState.email.value}
+            onChange={handleInputChange}
           />
           <Form.Text className="text-muted"></Form.Text>
         </Form.Group>
@@ -97,11 +97,15 @@ export default function SignUp() {
         </Form.Group>
 
         <div>
-          <Button variant="primary" disabled={loading} type="submit" onClick={handleSubmit}>
+          <Button
+            variant="primary"
+            disabled={loading}
+            type="submit"
+            onClick={handleSubmit}
+          >
             {loading ? "Loading..." : "Submit"}
           </Button>
         </div>
-        
       </Form>
       {/* <div style={styles.formControl}>
           <label htmlFor="username" style={styles.label}>

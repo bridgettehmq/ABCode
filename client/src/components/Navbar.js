@@ -4,14 +4,16 @@ import { Navbar, Offcanvas, Container, Nav } from "react-bootstrap";
 
 import "./Navbar.css";
 
-
 export default function NavFunction() {
   const { isLoggedIn, logout } = useAuth();
   return (
     <Navbar expand={false}>
       <Container fluid>
-        <Navbar.Brand className="brand" href="/">ABCode</Navbar.Brand>
+        <Navbar.Brand className="brand" href="/">
+          ABCode
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="offcanvasNavbar" />
+
         <Navbar.Offcanvas
           id="offcanvasNavbar"
           aria-labelledby="offcanvasNavbarLabel"
@@ -27,15 +29,12 @@ export default function NavFunction() {
               <Nav.Link href="/signup">Sign Up</Nav.Link>
               <Nav.Link href="/login">Login</Nav.Link>
             </Nav>
-            {isLoggedIn ? (
+            {isLoggedIn && (
               <>
                 <button className="navbar-link" onClick={logout}>
                   Logout
                 </button>
-              </>
-            ) : (
-              <>
-                <Nav.Link href="/NewPage" > {isLoggedIn} My Pages</Nav.Link>
+                <Nav.Link href="/NewPage"> My Pages</Nav.Link>
               </>
             )}
           </Offcanvas.Body>

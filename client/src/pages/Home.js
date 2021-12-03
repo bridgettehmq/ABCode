@@ -1,5 +1,5 @@
 import { useAuth } from "../util/auth";
-import { Stack, Button } from 'react-bootstrap';
+import { Stack, Button } from "react-bootstrap";
 import "./home.css";
 
 export default function Home() {
@@ -17,13 +17,18 @@ export default function Home() {
         {" "}
         To get started, click below to learn about HTML, CSS and JAVASCRIPT.
       </p>
-      
+
       <Stack gap={2} className="col-md-5 mx-auto">
-  <Button href="./info" variant="light">Gets Started</Button>
-  <Button href="./signup" variant="light">Sign Up</Button>
-  <Button href="./login" variant="light">Login</Button>
-</Stack>
-</div>
-   
+        <Button href="./info" variant="light">
+          Gets Started
+        </Button>
+        <Button href="./signup" variant="light">
+          Sign Up
+        </Button>
+        <Button href="./login" variant="light">
+          Login
+        </Button>
+      </Stack>
+    </div>
   );
 }
