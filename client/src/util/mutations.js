@@ -15,3 +15,22 @@ export const LOGIN = gql`
     }
   }
 `;
+
+export const ADD_PAGE = gql `
+mutation SavePage($input: PageInput!) {
+  savePage(input: $input) {
+    _id
+    username
+    email
+    pages {
+      pageId
+      title
+      h1
+      paragraph1
+      paragraph2
+      image
+    }
+  }
+}
+  `
+

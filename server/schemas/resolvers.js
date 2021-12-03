@@ -17,13 +17,6 @@ const {
         }
         return User.findOne({ email: ctx.user.email });
       },
-      page: async (parent, { pageId }) => {
-        return Page.findOne({ _id: pageId });
-      },
-      pages: async (parent, { username }) => {
-        const params = username ? { username } : {};
-        return Page.find(params).sort({ createdAt: -1 });
-      },
     },
   
     Mutation: {
@@ -41,7 +34,6 @@ const {
         }
       },
       login: async (parent, {email, password}) => {
-        const { email, password } = args;
         const user = await User.findOne({ email });
         if (!user) {
           throw new AuthenticationError("Invalid username or password");
@@ -77,12 +69,13 @@ const {
       },
       //TODO: define typedef and resolver to save a page for a user
       savePage: async (parent, { input }, context) => {
+        console.log(input)
           if (context.user) {
             const updatedUser = await User.findByIdAndUpdate(
               { _id: context.user._id },
               {
                 $addToSet: {
-                  savedPages: input}
+                  pages: input}
               },
               {
                 new: true,
