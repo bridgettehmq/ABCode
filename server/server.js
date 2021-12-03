@@ -7,6 +7,12 @@ const { typeDefs, resolvers } = require("./schemas");
 const db = require("./config/connection");
 const { authMiddleware } = require("./util/auth");
 
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/abcode", {
+  useNewUrlParser: true,
+  useFindAndModify: false,
+  useUnifiedTopology: true,
+})
+
 const PORT = process.env.PORT || 3001;
 
 startServer();
