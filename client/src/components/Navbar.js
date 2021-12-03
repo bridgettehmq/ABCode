@@ -33,7 +33,7 @@ export default function NavFunction() {
                 <button className="navbar-link" onClick={logout}>
                   Logout
                 </button>
-                <Nav.Link href="/NewPage"> My Pages</Nav.Link>
+                <Nav.Link href="/NewPage"> New Page</Nav.Link>
               </>
             )}
           </Offcanvas.Body>
