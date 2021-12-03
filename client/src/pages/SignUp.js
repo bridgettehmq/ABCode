@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Redirect } from "react-router-dom";
 import { useAuth } from "../util/auth";
-import { Form, Button } from "react-bootstrap";
+import { Form, Button, Alert } from "react-bootstrap";
 
 // This signup form is intentionally minimalist to reduce effort required to
 // customize it to your app's needs. See the excellent best practices guide for
@@ -32,7 +32,14 @@ export default function SignUp() {
   useEffect(() => {
     if (error) {
       // TODO: replace window alert with custom alert.
-      alert(error);
+      return (
+        <Alert variant="danger">
+          <Alert.Heading>Oh snap! You got an error!</Alert.Heading>
+          <p>
+            Oh no, it's look like this E-mail is already have an account please chose a differnt Email!  .
+          </p>
+        </Alert>
+     )
     }
   }, [error]);
 
@@ -56,11 +63,10 @@ export default function SignUp() {
       <hr />
       <Form className="container">
         <Form.Group className="mb-3" controlId="floatingInput">
-          <Form.Label htmlFor="username">User Name</Form.Label>
+          <Form.Label>User Name</Form.Label>
           <Form.Control
             autoFocus
             disabled={loading}
-            id="username"
             type="text"
             placeholder="Enter username"
             name="username"
@@ -70,10 +76,9 @@ export default function SignUp() {
           <Form.Text className="text-muted"></Form.Text>
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label htmlFor="email">Enter email</Form.Label>
+          <Form.Label>Enter email</Form.Label>
           <Form.Control
             disabled={loading}
-            id="email"
             type="email"
             name="email"
             placeholder="Enter email"
@@ -83,10 +88,9 @@ export default function SignUp() {
           <Form.Text className="text-muted"></Form.Text>
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label htmlFor="new-password">Password</Form.Label>
+          <Form.Label>Password</Form.Label>
           <Form.Control
             disabled={loading}
-            id="new-password"
             type="password"
             name="password"
             placeholder="Enter password"

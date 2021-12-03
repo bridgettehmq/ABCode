@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Redirect } from "react-router-dom";
 import { useAuth } from "../util/auth";
-import { Form, Button } from "react-bootstrap";
+import { Form, Button, Alert } from "react-bootstrap";
 // This signup form is intentionally minimalist to reduce effort required to
 // customize it to your app's needs. See the excellent best practices guide for
 // sign informs on web.dev https://web.dev/sign-in-form-best-practices/
@@ -29,9 +29,16 @@ export default function Login() {
 
   useEffect(() => {
     if (error) {
+      // console.log(error)
       // TODO: replace window alert with custom alert
-      alert(error);
-    }
+      return (
+      <Alert variant="danger">
+        <Alert.Heading>Oh snap! You got an error!</Alert.Heading>
+        <p>
+          Oh no, I think you missed typed your Email/ Password! go ahead and try again!  .
+        </p>
+      </Alert>
+   ) }
   }, [error]);
 
   const handleInputChange = (evt) => {
@@ -54,10 +61,9 @@ export default function Login() {
       <hr />
       <Form onSubmit={handleSubmit} className="container">
         <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label htmlFor="email">Enter email</Form.Label>
+          <Form.Label>Enter email</Form.Label>
           <Form.Control
             disabled={loading}
-            id="email"
             type="email"
             name="email"
             placeholder="Enter email"
@@ -67,10 +73,9 @@ export default function Login() {
           <Form.Text className="text-muted"></Form.Text>
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label htmlFor="new-password">Password</Form.Label>
+          <Form.Label>Password</Form.Label>
           <Form.Control
             disabled={loading}
-            id="new-password"
             type="password"
             name="password"
             placeholder="Enter password"
