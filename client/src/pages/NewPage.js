@@ -1,10 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import { useAuth } from "../util/auth";
 import { Button, Form, Row, Col, Container } from 'react-bootstrap';
 
 export default function NewPage() {
   const { user } = useAuth();
-  
+  const [pageTitle, setPageTitle] = useState('');
+  const [pageHeader, setPageHeader] = useState('');
+  const [paraOne, setParaOne] = useState('');
+  const [paraTwo, setParaTwo] = useState('');
+
+  const handleInputChange = (e) => {
+    e.preventDefault();
+    if (e.target.id === 'pageTitle') {
+      setPageTitle(e.target.value)
+    } else if (e.target.id === 'pageHeader') {
+      setPageHeader(e.target.value)
+    } else if (e.target.id === 'paraOne') {
+      setParaOne(e.target.value)
+    } else {
+      setParaTwo(e.target.value)
+    }
+  }
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+
+    setPageTitle('');
+    setPageHeader('');
+    setParaOne('');
+    setParaTwo('');
+  };
+
   return (
     <div>
       <h1>Welcome!</h1>
@@ -16,45 +42,45 @@ export default function NewPage() {
       </Container>
       <Container>
         <Form>
-          <Form.Group as={Row} className="mb-3" controlId="formHorizontalEmail">
+          <Form.Group as={Row} className="mb-3" controlId="pageTitle">
             <Form.Label column sm={2}>
               Title
             </Form.Label>
             <Col sm={10}>
-              <Form.Control type="title" placeholder="Page Title" />
+              <Form.Control value={pageTitle} type="text" placeholder="Page Title" onChange={handleInputChange} />
             </Col>
           </Form.Group>
 
-          <Form.Group as={Row} className="mb-3" controlId="formHorizontalPassword">
+          <Form.Group as={Row} className="mb-3" controlId="pageHeader">
             <Form.Label column sm={2}>
               H1
             </Form.Label>
             <Col sm={10}>
-              <Form.Control type="h1" placeholder="Page Heading" />
+              <Form.Control value={pageHeader} type="text" placeholder="Page Header" onChange={handleInputChange} />
             </Col>
           </Form.Group>
 
-          <Form.Group as={Row} className="mb-3" controlId="formHorizontalPassword">
+          <Form.Group as={Row} className="mb-3" controlId="paraOne">
             <Form.Label column sm={2}>
               P
             </Form.Label>
             <Col sm={10}>
-              <Form.Control type="h1" placeholder="Paragraph Text" />
+              <Form.Control value={paraOne} type="text" placeholder="Paragraph Text" onChange={handleInputChange} />
             </Col>
           </Form.Group>
 
-          <Form.Group as={Row} className="mb-3" controlId="formHorizontalPassword">
+          <Form.Group as={Row} className="mb-3" controlId="paraTwo">
             <Form.Label column sm={2}>
               P
             </Form.Label>
             <Col sm={10}>
-              <Form.Control type="h1" placeholder="Paragraph Text" />
+              <Form.Control value={paraTwo} type="text" placeholder="Paragraph Text" onChange={handleInputChange} />
             </Col>
           </Form.Group>
 
           <Form.Group as={Row} className="mb-3">
             <Col sm={{ span: 10, offset: 2 }}>
-              <Button type="submit">Submit</Button>
+              <Button type="submit" onClick={handleFormSubmit}>Submit</Button>
             </Col>
           </Form.Group>
         </Form>
@@ -100,7 +126,7 @@ export default function NewPage() {
           <Row>
             <Col xs={2}>{`7`}</Col>
             <Col>
-              {`<title>My Page</title>`}
+              {`<title>${pageTitle}</title>`}
             </Col>
           </Row>
           <Row>
@@ -124,19 +150,19 @@ export default function NewPage() {
           <Row>
             <Col xs={3}>{`11`}</Col>
             <Col>
-              {`<h1 style="text-align: center;">My Page Title</h1>`}
+              {`<h1 style="text-align: center;">${pageHeader}</h1>`}
             </Col>
           </Row>
           <Row>
             <Col xs={3}>{`12`}</Col>
             <Col>
-              {`<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>`}
+              {`<p>${paraOne}</p>`}
             </Col>
           </Row>
           <Row>
             <Col xs={3}>{`13`}</Col>
             <Col>
-              {`<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo sit, voluptatem beatae eum quisquam suscipit natus.</p>`}
+              {`<p>${paraTwo}</p>`}
             </Col>
           </Row>
           <Row>
