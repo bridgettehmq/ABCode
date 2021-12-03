@@ -1,17 +1,15 @@
 .navbar {
   display: flex;
+  font-weight: 1000;
+  background-color: rebeccapurple;
+  
 }
 
-.navbar-link {
-  --border: 1px solid #444;
-
+.nav {
   display: block;
-  width: 4em;
-  padding: 0.25em;
-  text-align: center;
+    text-align: center;
   text-decoration: none;
-  border: var(--border);
-  border-left: none;
+    border-left: none;
 
   /* style button as link */
   background: none;

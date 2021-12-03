@@ -40,7 +40,7 @@ const {
           throw error;
         }
       },
-      login: async (parent, args) => {
+      login: async (parent, {email, password}) => {
         const { email, password } = args;
         const user = await User.findOne({ email });
         if (!user) {
@@ -56,14 +56,14 @@ const {
         return { token, user };
       },
       //TODO: define typedef and resolver to remove a page from a user
-      removePage: async (parent, args, context) => {
+      removePage: async (parent, { pageId }, context) => {
           if (context.user) {
             const updatedUser = await User.findOneAndUpdate(
               { _id: context.user._id },
               {
                 $pull: {
                   savedPages: {
-                    pageId: args.pageId,
+                    pageId
                   },
                 },
               },
@@ -76,14 +76,13 @@ const {
           throw new AuthenticationError("Incorrect credentials");
       },
       //TODO: define typedef and resolver to save a page for a user
-      savePage: async (parent, args, context) => {
+      savePage: async (parent, { input }, context) => {
           if (context.user) {
             const updatedUser = await User.findByIdAndUpdate(
               { _id: context.user._id },
               {
                 $addToSet: {
-                  savedPages: args.pageId,
-                },
+                  savedPages: input}
               },
               {
                 new: true,
