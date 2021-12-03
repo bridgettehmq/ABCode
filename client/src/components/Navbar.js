@@ -29,15 +29,12 @@ export default function NavFunction() {
               <Nav.Link href="/signup">Sign Up</Nav.Link>
               <Nav.Link href="/login">Login</Nav.Link>
             </Nav>
-            {isLoggedIn ? (
+            {isLoggedIn && (
               <>
                 <button className="navbar-link" onClick={logout}>
                   Logout
                 </button>
-              </>
-            ) : (
-              <>
-                <Nav.Link href="/NewPage"> {isLoggedIn} My Pages</Nav.Link>
+                <Nav.Link href="/NewPage"> My Pages</Nav.Link>
               </>
             )}
           </Offcanvas.Body>
