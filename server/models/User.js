@@ -1,4 +1,4 @@
-const { Schema, model } = require("mongoose");
+const { Schema, model, Types } = require("mongoose");
 const bcrypt = require("bcrypt");
 
 const userSchema = new Schema({
@@ -20,36 +20,45 @@ const userSchema = new Schema({
     minlength: 5,
   },
 
-  page: [
-    {
-      title: {
-        type: String,
-        required: "You need to include a title!",
-        minlength: 1,
-        maxlength: 280,
-        trim: true,
+  pages: {
+    type: [
+      {
+        pageId: {
+          type: Types.ObjectId,
+          default: Types.ObjectId,
+          required: true
+        },
+        title: {
+          type: String,
+          required: "You need to include a title!",
+          minlength: 1,
+          maxlength: 280,
+          trim: true,
+        },
+        h1: {
+          type: String,
+          required: "You need to include an H1",
+          minlength: 1,
+          maxlength: 280,
+          trim: true,
+        },
+        paragraph1: {
+          type: String,
+          required: true,
+          maxlength: 500,
+        },
+        paragraph2: {
+          type: String,
+          maxlength: 500,
+        },
       },
-      h1: {
-        type: String,
-        required: "You need to include an H1",
-        minlength: 1,
-        maxlength: 280,
-        trim: true,
-      },
-      paragraph1: {
-        type: String,
-        required: true,
-        minlength: 100,
-        maxlength: 500,
-      },
-      paragraph2: {
-        type: String,
-        minlength: 100,
-        maxlength: 500,
-      },
-    },
-  ],
+    ],
+    validate: [arrayLimit, '{PATH} exceeds the limit of 10']
+  }
 });
+function arrayLimit(val){
+  return val.length <=10;
+}
 
 userSchema.pre("save", async function (next) {
   if (this.isNew || this.isModified("password")) {
