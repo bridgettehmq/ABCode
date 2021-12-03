@@ -2,14 +2,13 @@
   display: flex;
   font-weight: 1000;
   background-color: rebeccapurple;
-  
 }
 
 .nav {
   display: block;
-    text-align: center;
+  text-align: center;
   text-decoration: none;
-    border-left: none;
+  border-left: none;
 
   /* style button as link */
   background: none;
