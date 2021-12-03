@@ -43,6 +43,7 @@ export default function NewPage() {
       <Container>
         <Form>
           <Form.Group as={Row} className="mb-3" controlId="pageTitle">
+
             <Form.Label column sm={2}>
               Title
             </Form.Label>
@@ -52,6 +53,7 @@ export default function NewPage() {
           </Form.Group>
 
           <Form.Group as={Row} className="mb-3" controlId="pageHeader">
+
             <Form.Label column sm={2}>
               H1
             </Form.Label>
@@ -61,6 +63,7 @@ export default function NewPage() {
           </Form.Group>
 
           <Form.Group as={Row} className="mb-3" controlId="paraOne">
+
             <Form.Label column sm={2}>
               P
             </Form.Label>
@@ -70,17 +73,20 @@ export default function NewPage() {
           </Form.Group>
 
           <Form.Group as={Row} className="mb-3" controlId="paraTwo">
+
             <Form.Label column sm={2}>
               P
             </Form.Label>
             <Col sm={10}>
               <Form.Control value={paraTwo} type="text" placeholder="Paragraph Text" onChange={handleInputChange} />
+
             </Col>
           </Form.Group>
 
           <Form.Group as={Row} className="mb-3">
             <Col sm={{ span: 10, offset: 2 }}>
               <Button type="submit" onClick={handleFormSubmit}>Submit</Button>
+
             </Col>
           </Form.Group>
         </Form>
@@ -127,6 +133,7 @@ export default function NewPage() {
             <Col xs={2}>{`7`}</Col>
             <Col>
               {`<title>${pageTitle}</title>`}
+
             </Col>
           </Row>
           <Row>
@@ -151,18 +158,23 @@ export default function NewPage() {
             <Col xs={3}>{`11`}</Col>
             <Col>
               {`<h1 style="text-align: center;">${pageHeader}</h1>`}
+
             </Col>
           </Row>
           <Row>
             <Col xs={3}>{`12`}</Col>
             <Col>
+
               {`<p>${paraOne}</p>`}
+
             </Col>
           </Row>
           <Row>
             <Col xs={3}>{`13`}</Col>
             <Col>
+
               {`<p>${paraTwo}</p>`}
+
             </Col>
           </Row>
           <Row>
