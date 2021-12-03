@@ -1,38 +1,48 @@
 import { NavLink } from "react-router-dom";
 import { useAuth } from "../util/auth";
-import { Navbar, Offcanvas, Container, NavDropdown,Form, Button, Nav, FormControl} from 'react-bootstrap';
+import { Navbar, Offcanvas, Container, Nav } from "react-bootstrap";
 
 import "./Navbar.css";
 
-export default function nav() {
-  // const { isLoggedIn, logout } = useAuth();
+
+export default function NavFunction() {
+  const { isLoggedIn, logout } = useAuth();
   return (
-    <Navbar bg="light" expand={false}>
-  <Container fluid>
-    <Navbar.Brand href="/">ABCode</Navbar.Brand>
-    <Navbar.Toggle aria-controls="offcanvasNavbar" />
-    <Navbar.Offcanvas
-      id="offcanvasNavbar"
-      aria-labelledby="offcanvasNavbarLabel"
-      placement="end"
-    >
-      <Offcanvas.Header closeButton>
-        <Offcanvas.Title id="offcanvasNavbarLabel">Offcanvas</Offcanvas.Title>
-      </Offcanvas.Header>
-      <Offcanvas.Body>
-        <Nav className="justify-content-end flex-grow-1 pe-3">
-          <Nav.Link href="/">Home</Nav.Link>
-          <Nav.Link href="/info">info</Nav.Link>
-          <Nav.Link href="/">Sign Up</Nav.Link>
-          <Nav.Link href="/info">Login</Nav.Link>
-          <Nav.Link href="/info">Log Out</Nav.Link>
-          
-        </Nav>
-             </Offcanvas.Body>
-    </Navbar.Offcanvas>
-  </Container>
-</Navbar>
-    
+    <Navbar expand={false}>
+      <Container fluid>
+        <Navbar.Brand className="brand" href="/">ABCode</Navbar.Brand>
+        <Navbar.Toggle aria-controls="offcanvasNavbar" />
+        <Navbar.Offcanvas
+          id="offcanvasNavbar"
+          aria-labelledby="offcanvasNavbarLabel"
+          placement="end"
+        >
+          <Offcanvas.Header closeButton>
+            <Offcanvas.Title id="offcanvasNavbarLabel">Menu</Offcanvas.Title>
+          </Offcanvas.Header>
+          <Offcanvas.Body>
+            <Nav className="justify-content-end flex-grow-1 pe-3">
+              <Nav.Link href="/">Home</Nav.Link>
+              <Nav.Link href="/info">info</Nav.Link>
+              <Nav.Link href="/signup">Sign Up</Nav.Link>
+              <Nav.Link href="/login">Login</Nav.Link>
+            </Nav>
+            {isLoggedIn ? (
+              <>
+                <button className="navbar-link" onClick={logout}>
+                  Logout
+                </button>
+              </>
+            ) : (
+              <>
+                <Nav.Link href="/NewPage" > {isLoggedIn} My Pages</Nav.Link>
+              </>
+            )}
+          </Offcanvas.Body>
+        </Navbar.Offcanvas>
+      </Container>
+    </Navbar>
+
     // <nav className="navbar">
     //   <NavLink exact to="/" className="navbar-link">
     //     Home

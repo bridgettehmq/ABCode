@@ -1,5 +1,8 @@
 .navbar {
   display: flex;
+  font-weight: 1000;
+  background-color: rebeccapurple;
+  
 }
 
 .nav {
