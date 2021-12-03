@@ -2,12 +2,7 @@ const mongoose = require("mongoose");
 require('dotenv').config();
 
 mongoose
-  .connect(process.env.MONGODB_URI || 'mongodb://localhost/ABCode', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-    useFindAndModify: false,
-  })
+  .connect(process.env.MONGODB_URI || 'mongodb://localhost/abcode')
   .catch((err) => {
     console.log(err);
     console.log(

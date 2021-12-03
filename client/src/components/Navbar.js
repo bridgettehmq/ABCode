@@ -1,4 +1,3 @@
-import { NavLink } from "react-router-dom";
 import { useAuth } from "../util/auth";
 import { Navbar, Offcanvas, Container, Nav } from "react-bootstrap";
 
