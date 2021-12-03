@@ -193,7 +193,7 @@ export default function Info() {
           <Button variant="primary" onClick={() => handlejsShow()}>
             Go learn
           </Button>
-          <CSSModal
+          <JSModal
             show={jsShow}
             onHide={() => handlejsClose()}
           />
