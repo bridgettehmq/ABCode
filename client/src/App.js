@@ -30,16 +30,14 @@ function App() {
             <Route path="/signup">
               <SignUp />
             </Route>
-            {/* Use PrivateRoute for pages that should only be accessible to a
-            user that has logged in.*/}
+            {/* We should remove the /protected path eventually - this was part of boiler plate code.*/}
             <PrivateRoute path="/protected">
               <ProtectedPageExample />
             </PrivateRoute>
-            {/* For development purposes, I have the route below as Route and not PrivateRoute, 
-            but it will need to be changed once our back end connects */}
-            <Route path="/newpage">
+            <PrivateRoute path="/newpage">
               <NewPage />
-            </Route>
+            </PrivateRoute>
+            {/* Will need a "my pages" path on a PrivateRoute */}
             <Route path="/info">
               <Info />
             </Route>
