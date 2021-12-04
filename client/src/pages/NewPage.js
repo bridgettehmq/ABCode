@@ -1,7 +1,8 @@
-import React, { useState, useMutation } from "react";
+import React, { useState } from "react";
 import { useAuth } from "../util/auth";
 import { Button, Form, Row, Col, Container } from "react-bootstrap";
 import { ADD_PAGE } from "../util/mutations";
+import { useMutation } from "@apollo/client"
 
 export default function NewPage() {
   const { user } = useAuth();
