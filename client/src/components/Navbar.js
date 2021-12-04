@@ -1,5 +1,5 @@
 import { useAuth } from "../util/auth";
-import { Navbar, Offcanvas, Container, Nav } from "react-bootstrap";
+import { Navbar, Offcanvas, Container, Nav, Button } from "react-bootstrap";
 
 import "./Navbar.css";
 
@@ -30,10 +30,11 @@ export default function NavFunction() {
             </Nav>
             {isLoggedIn && (
               <>
-                <button className="navbar-link" onClick={logout}>
+                <Button className="navbar-link" variant="light" onClick={logout}>
                   Logout
-                </button>
+                </Button>
                 <Nav.Link href="/NewPage"> New Page</Nav.Link>
+                <Nav.Link href="/#"> My Pages</Nav.Link>
               </>
             )}
           </Offcanvas.Body>
