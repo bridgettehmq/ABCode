@@ -34,3 +34,17 @@ export const QUERY_ALL_PAGES = gql `
     }
   }
 `;
+
+// THIS IS A TEST QUERY TO SEE IF ZACK IS ABLE TO POPULATE THE MY PAGES PAGE WITH EITHER THIS QUERY OR QUERY_ALL_PAGES
+export const TEST_QUERY = gql `
+  query testMe {
+    me {
+      pages {
+        pageId
+        title
+        h1
+        paragraph1
+        paragraph2
+      }
+    }
+  }`;

@@ -6,7 +6,8 @@ import Home from "./pages/Home";
 import Info from "./pages/Info";
 import Login from "./pages/Login";
 import NewPage from "./pages/NewPage";
-import ProtectedPageExample from "./pages/ProtectedPageExample";
+// import MyPages from "./pages/MyPages";
+import SinglePage from "./pages/SinglePage";
 import SignUp from "./pages/SignUp";
 import { client } from "./util/apolloClient";
 import { AuthProvider } from "./util/auth";
@@ -30,14 +31,15 @@ function App() {
             <Route path="/signup">
               <SignUp />
             </Route>
-            {/* We should remove the /protected path eventually - this was part of boiler plate code.*/}
-            <PrivateRoute path="/protected">
-              <ProtectedPageExample />
-            </PrivateRoute>
             <PrivateRoute path="/newpage">
               <NewPage />
             </PrivateRoute>
-            {/* Will need a "my pages" path on a PrivateRoute */}
+            {/* <PrivateRoute path="/mypages">
+              <MyPages />
+            </PrivateRoute> */}
+            <PrivateRoute path="/pages/:pageId">
+              <SinglePage />
+            </PrivateRoute>
             <Route path="/info">
               <Info />
             </Route>
