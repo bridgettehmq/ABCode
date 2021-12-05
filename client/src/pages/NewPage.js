@@ -167,42 +167,98 @@ export default function NewPage() {
           </Row>
           <Row>
             <Col xs={2}>{`7`}</Col>
+            <Col>{`<style>`}</Col>
+          </Row>
+          <Row>
+            <Col xs={3}>{`8`}</Col>
+            <Col>{`.myDiv {`}</Col>
+          </Row>
+          <Row>
+            <Col xs={4}>{`9`}</Col>
+            <Col>{`background-image: url(https://image.png);`}</Col>
+          </Row>
+          <Row>
+            <Col xs={4}>{`10`}</Col>
+            <Col>{`background-repeat: no-repeat;`}</Col>
+          </Row>
+          <Row>
+            <Col xs={4}>{`11`}</Col>
+            <Col>{`background-size: 100%;`}</Col>
+          </Row>
+          <Row>
+            <Col xs={4}>{`12`}</Col>
+            <Col>{`padding: 5px;`}</Col>
+          </Row>
+          <Row>
+            <Col xs={4}>{`13`}</Col>
+            <Col>{`margin: auto;`}</Col>
+          </Row>
+          <Row>
+            <Col xs={4}>{`14`}</Col>
+            <Col>{`text-align: center;`}</Col>
+          </Row>
+          <Row>
+            <Col xs={4}>{`15`}</Col>
+            <Col>{`display: block;`}</Col>
+          </Row>
+          <Row>
+            <Col xs={4}>{`16`}</Col>
+            <Col>{`width: 80%;`}</Col>
+          </Row>
+          <Row>
+            <Col xs={4}>{`17`}</Col>
+            <Col>{`box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.25);}`}</Col>
+          </Row>
+          <Row>
+            <Col xs={2}>{`18`}</Col>
+            <Col>{`</style>`}</Col>
+          </Row>
+          <Row>
+            <Col xs={2}>{`19`}</Col>
             <Col>{`<title>${pageTitle}</title>`}</Col>
           </Row>
           <Row>
-            <Col xs={1}>{`8`}</Col>
+            <Col xs={1}>{`20`}</Col>
             <Col>{`</head>`}</Col>
           </Row>
           <Row>
-            <Col xs={1}>{`9`}</Col>
+            <Col xs={1}>{`21`}</Col>
             <Col>{`<body>`}</Col>
           </Row>
           <Row>
-            <Col xs={2}>{`10`}</Col>
-            <Col>{`<div>`}</Col>
+            <Col xs={2}>{`22`}</Col>
+            <Col>{`<div class="myDiv">`}</Col>
           </Row>
           <Row>
-            <Col xs={3}>{`11`}</Col>
-            <Col>{`<h1 style="text-align: center;">${pageHeader}</h1>`}</Col>
+            <Col xs={3}>{`23`}</Col>
+            <Col>{`<h1 style="color: rgb(0, 2, 128); font-size: 50px;text-shadow: 2px 2px #6ba6ff;">`}</Col>
           </Row>
           <Row>
-            <Col xs={3}>{`12`}</Col>
-            <Col>{`<p>${paraOne}</p>`}</Col>
+            <Col xs={4}>{`24`}</Col>
+            <Col>{`${pageHeader}`}</Col>
           </Row>
           <Row>
-            <Col xs={3}>{`13`}</Col>
-            <Col>{`<p>${paraTwo}</p>`}</Col>
+            <Col xs={3}>{`25`}</Col>
+            <Col>{`</h1>`}</Col>
           </Row>
           <Row>
-            <Col xs={2}>{`14`}</Col>
+            <Col xs={3}>{`26`}</Col>
+            <Col>{`<p style="color: rgb(136, 33, 33); font-size: 20px; font-weight: bold;">${paraOne}</p>`}</Col>
+          </Row>
+          <Row>
+            <Col xs={3}>{`27`}</Col>
+            <Col>{`<p style="color: rgb(136, 33, 33); font-size: 20px">${paraTwo}</p>`}</Col>
+          </Row>
+          <Row>
+            <Col xs={2}>{`28`}</Col>
             <Col>{`</div>`}</Col>
           </Row>
           <Row>
-            <Col xs={1}>{`15`}</Col>
+            <Col xs={1}>{`29`}</Col>
             <Col>{`</body>`}</Col>
           </Row>
           <Row>
-            <Col xs={1}>{`16`}</Col>
+            <Col xs={1}>{`30`}</Col>
             <Col>{`</html>`}</Col>
           </Row>
         </code>
