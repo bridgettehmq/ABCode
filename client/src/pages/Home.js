@@ -20,14 +20,28 @@ export default function Home() {
 
       <Stack gap={2} className="col-md-5 mx-auto">
         <Button href="./info" variant="light">
-          Gets Started
+          Get Started
         </Button>
-        <Button href="./signup" variant="light">
-          Sign Up
-        </Button>
-        <Button href="./login" variant="light">
-          Login
-        </Button>
+        {isLoggedIn && (
+          <>
+            <Button href="./newpage" variant="light">
+              New Pages
+            </Button>
+            <Button href="./mypage" variant="light">
+              My Pages
+            </Button>
+          </>
+        )}
+        {!isLoggedIn && (
+          <>
+            <Button href="./signup" variant="light">
+              Sign Up
+            </Button>
+            <Button href="./login" variant="light">
+              Login
+            </Button>
+          </>
+        )}
       </Stack>
     </div>
   );
