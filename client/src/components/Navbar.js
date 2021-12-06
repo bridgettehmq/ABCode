@@ -38,7 +38,7 @@ export default function NavFunction() {
                   Logout
                 </Button>
                 <Nav.Link href="/NewPage"> New Page</Nav.Link>
-                <Nav.Link href="/#"> My Pages</Nav.Link>
+                <Nav.Link href="/MyPages"> My Pages</Nav.Link>
               </>
             )}
             {!isLoggedIn && (
