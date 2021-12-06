@@ -57,6 +57,11 @@ If you would like to install the application, please follow the steps listed bel
 
 The live app: https://abcode21.herokuapp.com/
 
+A screenshot of the project ![actual footage of the project](client/public/images/main.png)
+![actual footage of the project](client/public/images/flashcard.png)
+![actual footage of the project](client/public/images/newpage.png)
+![actual footage of the project](client/public/images/newpage1.png)
+
 ## Technologies
 
 Technologies
