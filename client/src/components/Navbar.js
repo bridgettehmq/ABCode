@@ -28,7 +28,7 @@ export default function NavFunction() {
             {isLoggedIn && (
               <>
                 <Nav.Link href="/NewPage"> New Page</Nav.Link>
-                <Nav.Link href="/#"> My Pages</Nav.Link>
+                <Nav.Link href="/mypages"> My Pages</Nav.Link>
                 <Nav.Link
                   className="navbar-link"
                   variant="light"

@@ -27,7 +27,7 @@ export default function Home() {
             <Button href="./newpage" variant="light">
               New Pages
             </Button>
-            <Button href="./mypage" variant="light">
+            <Button href="./mypages" variant="light">
               My Pages
             </Button>
           </>
