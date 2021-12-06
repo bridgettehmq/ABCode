@@ -37,15 +37,17 @@ export default function NewPage() {
             paragraph2: paraTwo
           },
         },
-      });
+      });  
     } catch (err) {
       console.error(err);
     }
-
+    
     setPageTitle("");
     setPageHeader("");
     setParaOne("");
     setParaTwo("");
+    
+    window.location="/mypages";
   };
 
   return (
