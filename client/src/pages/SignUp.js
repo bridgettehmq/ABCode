@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Redirect } from "react-router-dom";
 import { useAuth } from "../util/auth";
 import { Form, Button, Alert } from "react-bootstrap";
@@ -13,19 +13,6 @@ const initialFormState = {
 export default function SignUp() {
   const { isLoggedIn, signup, loading, error } = useAuth();
   const [formState, setFormState] = useState(initialFormState);
-
-  useEffect(() => {
-    if (error) {
-      return (
-        <Alert variant="danger">
-          <Alert.Heading>Oh snap! You got an error!</Alert.Heading>
-          <p>
-            Oh no, it's look like this E-mail is already have an account please chose a different Email!  .
-          </p>
-        </Alert>
-     )
-    }
-  }, [error]);
 
   const handleInputChange = (evt) => {
     const { name, value } = evt.target;
@@ -95,6 +82,12 @@ export default function SignUp() {
           </Button>
         </div>
       </Form>
+      {error &&<Alert variant="danger">
+          <Alert.Heading>Oh snap! You got an error!</Alert.Heading>
+          <p>
+            {error}
+          </p>
+        </Alert>}
     </div>
   );
 }
