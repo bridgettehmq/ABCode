@@ -28,3 +28,10 @@ p {
   background: rebeccapurple;
   color: ghostwhite;
 }
+.alert {
+  width: 50%;
+  padding: 5px;
+  margin: auto;
+  text-align: center;
+  display: block;
+}
