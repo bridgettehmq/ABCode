@@ -1,5 +1,5 @@
 // import { useAuth } from "../util/auth";
-import { Stack, Card, Button } from "react-bootstrap";
+import { Stack } from "react-bootstrap";
 import { useQuery } from "@apollo/client";
 import { TEST_QUERY } from "../util/queries";
 import PageList from "../components/PageList";
