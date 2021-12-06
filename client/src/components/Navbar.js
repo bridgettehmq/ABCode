@@ -25,49 +25,31 @@ export default function NavFunction() {
             <Nav className="justify-content-end flex-grow-1 pe-3">
               <Nav.Link href="/">Home</Nav.Link>
               <Nav.Link href="/info">info</Nav.Link>
-              <Nav.Link href="/signup">Sign Up</Nav.Link>
-              <Nav.Link href="/login">Login</Nav.Link>
+              {/* <Nav.Link href="/signup">Sign Up</Nav.Link>
+              <Nav.Link href="/login">Login</Nav.Link> */}
             </Nav>
             {isLoggedIn && (
               <>
-                <Button className="navbar-link" variant="light" onClick={logout}>
+                <Button
+                  className="navbar-link"
+                  variant="light"
+                  onClick={logout}
+                >
                   Logout
                 </Button>
                 <Nav.Link href="/NewPage"> New Page</Nav.Link>
-                <Nav.Link href="/#"> My Pages</Nav.Link>
+                <Nav.Link href="/MyPages"> My Pages</Nav.Link>
+              </>
+            )}
+            {!isLoggedIn && (
+              <>
+              <Nav.Link href="/signup">Sign Up</Nav.Link>
+              <Nav.Link href="/login">Login</Nav.Link>
               </>
             )}
           </Offcanvas.Body>
         </Navbar.Offcanvas>
       </Container>
     </Navbar>
-
-    // <nav className="navbar">
-    //   <NavLink exact to="/" className="navbar-link">
-    //     Home
-    //   </NavLink>
-    //   <NavLink exact to="/info" className="navbar-link">
-    //     Info
-    //   </NavLink>
-    //   {isLoggedIn ? (
-    //     <>
-    //       <NavLink to="/protected" className="navbar-link">
-    //         User
-    //       </NavLink>
-    //       <button className="navbar-link" onClick={logout}>
-    //         Logout
-    //       </button>
-    //     </>
-    //   ) : (
-    //     <>
-    //       <NavLink to="/login" className="navbar-link">
-    //         Login
-    //       </NavLink>
-    //       <NavLink to="/signup" className="navbar-link">
-    //         Signup
-    //       </NavLink>
-    //     </>
-    //   )}
-    // </nav>
   );
 }
