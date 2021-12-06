@@ -149,14 +149,13 @@ export default function Info() {
   const handlejsShow = () => setjsShow(true);
   return (
     <>
-      <Card style={{ width: "18rem" }} className='m-auto mt-5'>
+      <Card style={{ width: "50%", textAlign: "center" }} className='m-auto mt-5'>
         <Card.Body>
-          <Card.Title>HTML Flashcard</Card.Title>
+          <Card.Title style={{ fontWeight: "bolder" }}>HTML</Card.Title>
           <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+            Click through these flashcards to learn about basic HTML.
           </Card.Text>
-          <Button variant="primary" onClick={() => handleHTMLShow()}>
+          <Button style={{ width: "100%" }} variant="primary" onClick={() => handleHTMLShow()}>
             Go learn
           </Button>
           <HTMLModal
@@ -166,14 +165,13 @@ export default function Info() {
         </Card.Body>
       </Card>
 
-      <Card style={{ width: "18rem" }} className='m-auto mt-5'>
+      <Card style={{ width: "50%", textAlign: "center" }} className='m-auto mt-5'>
         <Card.Body>
-          <Card.Title>CSS Flashcard</Card.Title>
+          <Card.Title style={{ fontWeight: "bolder" }}>CSS</Card.Title>
           <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+          Click through these flashcards to learn about basic CSS.
           </Card.Text>
-          <Button variant="primary" onClick={() => handlecssShow()}>
+          <Button style={{ width: "100%" }} variant="primary" onClick={() => handlecssShow()}>
             Go learn
           </Button>
           <CSSModal
@@ -183,14 +181,13 @@ export default function Info() {
         </Card.Body>
       </Card>
 
-      <Card style={{ width: "18rem" }} className='m-auto mt-5'>
+      <Card style={{ width: "50%", textAlign: "center" }} className='m-auto mt-5'>
         <Card.Body>
-          <Card.Title>JavaScript Flashcard</Card.Title>
+          <Card.Title style={{ fontWeight: "bolder" }}>JavaScript</Card.Title>
           <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+            Click through these flashcards to learn about basic JavaScript.
           </Card.Text>
-          <Button variant="primary" onClick={() => handlejsShow()}>
+          <Button style={{ width: "100%" }} variant="primary" onClick={() => handlejsShow()}>
             Go learn
           </Button>
           <JSModal
