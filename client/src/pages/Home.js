@@ -25,7 +25,7 @@ export default function Home() {
         {isLoggedIn && (
           <>
             <Button href="./newpage" variant="light">
-              New Pages
+              New Page
             </Button>
             <Button href="./mypages" variant="light">
               My Pages

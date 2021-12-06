@@ -30,7 +30,7 @@ const PageList = ({
   }
   
   if (!pages.length) {
-    return <h3>No page Yet</h3>;
+    return <h3 style={{ textAlign: "center" }}>Oops! You haven't created any pages yet. Head over to New Pages to get started.</h3>;
   }
 
   return (
