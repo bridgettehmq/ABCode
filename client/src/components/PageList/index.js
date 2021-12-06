@@ -1,9 +1,34 @@
 import React from 'react';
-import { Card,Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import { Card, Button } from 'react-bootstrap';
+import { REMOVE_PAGE } from "../../util/mutations";
+import { useMutation } from "@apollo/client"
 
 const PageList = ({
    pages
 }) => {
+  const [removePage, { error }] = useMutation(REMOVE_PAGE, {
+    update(cache, { data: { removePage } }) {
+      cache.modify({
+        fields: {
+          me(me) {
+            return {...me, pages:[...removePage.pages]};
+          }
+        }
+      });
+    }
+  });
+
+  const handleClick = async (pageId) => {
+    try {
+      const { data } = await removePage({
+        variables: { pageId }
+      });
+    } catch (err) {
+      console.error(err);
+    }
+  }
+  
   if (!pages.length) {
     return <h3>No page Yet</h3>;
   }
@@ -16,8 +41,11 @@ const PageList = ({
             <Card >
           <Card.Body>
             <Card.Title style={{fontWeight:"bolder",textAlign:"center"}}>{page.title}</Card.Title>
-            <Button onClick={()=>window.location=`/pages/${page.pageId}`} variant="light" className='w-100'>
+            <Link to={`/pages/${page.pageId}`} className='w-100 btn btn-primary'>
               Go to the page
+            </Link>
+            <Button onClick={()=>handleClick(page.pageId)} variant="light" className='w-100'>
+              Delete Page
             </Button>
           </Card.Body>
         </Card>
