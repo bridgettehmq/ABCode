@@ -17,27 +17,27 @@ export default function MyPages() {
         Here is the page where you can see all the pages you have been created.
       </p>
 
-      <Stack gap={2} className="col-md-5 mx-auto">
-        <Card style={{ width: "18rem" }}>
+      <Stack gap={3} className="col-md-5 mx-auto">
+        <Card style={{ width: "24rem" }}>
           <Card.Body>
             <Card.Title>Card Title(will be the page title)</Card.Title>
-            <Button href="./info" variant="light">
+            <Button href="./info" variant="light" className='w-100'>
               Go to the page
             </Button>
           </Card.Body>
         </Card>
-        <Card style={{ width: "18rem" }}>
+        <Card style={{ width: "24rem" }}>
           <Card.Body>
             <Card.Title>Card Title(will be the page title)</Card.Title>
-            <Button href="./info" variant="light">
+            <Button href="./info" variant="light" className='w-100'>
               Go to the page
             </Button>
           </Card.Body>
         </Card>
-        <Card style={{ width: "18rem" }}>
+        <Card style={{ width: "24rem" }}>
           <Card.Body>
             <Card.Title>Card Title(will be the page title)</Card.Title>
-            <Button href="./info" variant="light">
+            <Button href="./info" variant="light" className='w-100'>
               Go to the page
             </Button>
           </Card.Body>
