@@ -55,7 +55,7 @@ If you would like to install the application, please follow the steps listed bel
 
 ## Usage
 
-The live app: https://abcode21.herokuapp.com/
+The live app: https://abcode-zl-21.herokuapp.com/
 
 A screenshot of the project ![actual footage of the project](client/public/images/main.png)
 ![actual footage of the project](client/public/images/flashcard.png)
