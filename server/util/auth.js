@@ -21,16 +21,6 @@ const signToken = (user) => {
   });
 };
 
-// middleware
-const requireAuth = async (req, res, next) => {
-  if (req.user) {
-    // User is defined (assuming authMiddleware was called first). Proceed to route.
-    next();
-    return;
-  }
-  res.status(401).json({ message: "Token missing or invalid." });
-};
-
 
 const authMiddleware = async ({ req }) => {
   // allows token to be sent via req.body, req.query, or headers
@@ -59,6 +49,5 @@ const authMiddleware = async ({ req }) => {
 
 module.exports = {
   signToken,
-  authMiddleware,
-  requireAuth
+  authMiddleware
 };
