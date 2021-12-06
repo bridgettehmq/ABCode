@@ -6,7 +6,7 @@ import Home from "./pages/Home";
 import Info from "./pages/Info";
 import Login from "./pages/Login";
 import NewPage from "./pages/NewPage";
-// import MyPages from "./pages/MyPages";
+import MyPages from "./pages/MyPages";
 import SinglePage from "./pages/SinglePage";
 import SignUp from "./pages/SignUp";
 import { client } from "./util/apolloClient";
@@ -34,9 +34,9 @@ function App() {
             <PrivateRoute path="/newpage">
               <NewPage />
             </PrivateRoute>
-            {/* <PrivateRoute path="/mypages">
+            <PrivateRoute path="/mypages">
               <MyPages />
-            </PrivateRoute> */}
+            </PrivateRoute>
             <PrivateRoute path="/pages/:pageId">
               <SinglePage />
             </PrivateRoute>
