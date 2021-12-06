@@ -1,15 +1,22 @@
 import { useQuery } from "@apollo/client";
-import { QUERY_SINGLE_PAGE } from "../util/queries";
+import { QUERY_SINGLE_PAGE,TEST_QUERY } from "../util/queries";
 import { useParams } from 'react-router-dom'
 
 export default function SinglePage () {
   const { pageId } = useParams();
-  const { data } = useQuery(QUERY_SINGLE_PAGE, {
-    variables: { pageId: pageId }
-  });
+  const { loading,data } = useQuery(TEST_QUERY);
 
-  const page = data?.page || {};
+  const pages = data?.me.pages || [];
+  console.log(pages);
 
+  const page = pages?.filter(x=>x.pageId===pageId)[0]
+  console.log(page)
+  if(loading){
+    return <div>Loading...</div>;
+  }
+  if(pages.length===0){
+    return <div>Add a page to see!</div>;
+  }
   return (
   <div style={{ 
     textAlign: "center", 

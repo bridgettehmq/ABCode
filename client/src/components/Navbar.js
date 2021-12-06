@@ -24,21 +24,19 @@ export default function NavFunction() {
           <Offcanvas.Body>
             <Nav className="justify-content-end flex-grow-1 pe-3">
               <Nav.Link href="/">Home</Nav.Link>
-              <Nav.Link href="/info">info</Nav.Link>
-              {/* <Nav.Link href="/signup">Sign Up</Nav.Link>
-              <Nav.Link href="/login">Login</Nav.Link> */}
-            </Nav>
+              <Nav.Link href="/info">Flashcards</Nav.Link>
             {isLoggedIn && (
               <>
-                <Button
+                <Nav.Link href="/NewPage"> New Page</Nav.Link>
+                <Nav.Link href="/#"> My Pages</Nav.Link>
+                <Nav.Link
                   className="navbar-link"
                   variant="light"
                   onClick={logout}
-                >
+                  >
                   Logout
-                </Button>
-                <Nav.Link href="/NewPage"> New Page</Nav.Link>
-                <Nav.Link href="/MyPages"> My Pages</Nav.Link>
+
+                </Nav.Link>
               </>
             )}
             {!isLoggedIn && (
@@ -47,6 +45,7 @@ export default function NavFunction() {
               <Nav.Link href="/login">Login</Nav.Link>
               </>
             )}
+            </Nav>
           </Offcanvas.Body>
         </Navbar.Offcanvas>
       </Container>
