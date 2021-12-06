@@ -26,7 +26,7 @@ const {
           const token = await signToken(user);
           return { user, token };
         } catch (error) {
-          if (error.name === "MongoError" && error.code === 11000) {
+          if (error.code === 11000) {
             const [[key, value]] = Object.entries(error.keyValue);
             throw new UserInputError(`${key} "${value}" already exists.`);
           }
