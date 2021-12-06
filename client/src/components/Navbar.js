@@ -1,5 +1,5 @@
 import { useAuth } from "../util/auth";
-import { Navbar, Offcanvas, Container, Nav, Button } from "react-bootstrap";
+import { Navbar, Offcanvas, Container, Nav } from "react-bootstrap";
 
 import "./Navbar.css";
 

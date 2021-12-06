@@ -3,7 +3,6 @@ import { Redirect } from "react-router-dom";
 import { useAuth } from "../util/auth";
 import { Form, Button, Alert } from "react-bootstrap";
 
-
 const initialFormState = {
   username: "",
   email: "",
@@ -82,12 +81,12 @@ export default function SignUp() {
           </Button>
         </div>
       </Form>
-      {error &&<Alert variant="danger">
+      {error && (
+        <Alert className="alert" variant="danger">
           <Alert.Heading>Oh snap! You got an error!</Alert.Heading>
-          <p>
-            {error}
-          </p>
-        </Alert>}
+          <p>{error}</p>
+        </Alert>
+      )}
     </div>
   );
 }
