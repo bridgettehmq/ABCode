@@ -34,3 +34,16 @@ mutation SavePage($input: PageInput!) {
 }
   `
 
+export const REMOVE_PAGE = gql `
+  mutation removePage($pageId: ID!) {
+    removePage(pageId: $pageId) {
+      pages {
+        pageId
+        title
+        h1
+        paragraph1
+        paragraph2
+      }
+    }
+  }
+`

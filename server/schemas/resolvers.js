@@ -54,7 +54,7 @@ const {
               { _id: context.user._id },
               {
                 $pull: {
-                  savedPages: {
+                  pages: {
                     pageId
                   },
                 },

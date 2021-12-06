@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useHistory } from 'react-router-dom';
 import { Button, Form, Row, Col, Container } from "react-bootstrap";
 import { ADD_PAGE } from "../util/mutations";
 import { useMutation } from "@apollo/client"
@@ -8,6 +9,8 @@ export default function NewPage() {
   const [pageHeader, setPageHeader] = useState("");
   const [paraOne, setParaOne] = useState("");
   const [paraTwo, setParaTwo] = useState("");
+
+  const history = useHistory();
 
   const handleInputChange = (e) => {
     e.preventDefault();
@@ -47,7 +50,7 @@ export default function NewPage() {
     setParaOne("");
     setParaTwo("");
     
-    window.location="/mypages";
+    history.push("/mypages");
   };
 
   return (
